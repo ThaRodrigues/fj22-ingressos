@@ -179,4 +179,11 @@
         </plugins>
     </build>
 
+    <developers>
+        <developer>
+            <name>Thaina Rodrigues</name>
+            <email>rodrigues.thainab@gmail.com</email>
+        </developer>
+    </developers>
+
 </project>
