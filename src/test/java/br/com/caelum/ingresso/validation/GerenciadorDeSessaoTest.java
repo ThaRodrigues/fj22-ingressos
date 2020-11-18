@@ -24,8 +24,8 @@ public class GerenciadorDeSessaoTest {
 
     @Before
     public void preparaSessoes(){
-        this.rogueOne = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI");
-        this.sala3D = new Sala("Sala 3D");
+        this.rogueOne = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI", BigDecimal.ONE);
+        this.sala3D = new Sala("Sala 3D", BigDecimal.TEN);
         this.sessaoDasDez = new Sessao(LocalTime.parse("10:00:00"), sala3D, rogueOne);
         this.sessaoDasTreze = new Sessao(LocalTime.parse("13:00:00"), sala3D, rogueOne);
         this.getSessaoDasDezoito = new Sessao(LocalTime.parse("18:00:00"), sala3D, rogueOne);
@@ -35,10 +35,10 @@ public class GerenciadorDeSessaoTest {
     public void deveAdicionarSeListaDaSessaoEstiverVazia(){
         List<Sessao> sessoes = Collections.emptyList();
         GerenciadorDeSessao gerenciador = new GerenciadorDeSessao(sessoes);
-        Filme filme = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI");
+        Filme filme = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI", BigDecimal.ONE);
         filme.setDuracao(120);
         LocalTime horario = LocalTime.parse("10:00:00");
-        Sala sala = new Sala("");
+        Sala sala = new Sala("", BigDecimal.ONE);
 
         Sessao sessao = new Sessao(horario, sala, filme);
 
